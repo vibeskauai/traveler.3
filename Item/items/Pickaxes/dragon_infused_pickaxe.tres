@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bq1pxk3gpr8t"]
+
+[ext_resource type="Texture2D" uid="uid://d4col7ejcd8ih" path="res://Item/items/Pickaxes/dragon_infused_pickaxe.png" id="1_4ytb8"]
+[ext_resource type="Script" uid="uid://6h5ryec31flm" path="res://Item/item_data.gd" id="1_5v4qv"]
+[ext_resource type="Resource" uid="uid://2l31svh87rkl" path="res://Resources/Stats/dragon_infused_pickaxe_stats.tres" id="3_4ytb8"]
+
+[resource]
+script = ExtResource("1_5v4qv")
+name = "Dragon Infused Pickaxe"
+description = "You can now mine the Volcanic Heart with this!"
+item_type = "pickaxe"
+stackable = false
+texture = ExtResource("1_4ytb8")
+can_equip = true
+equip_slot = "weapon"
+stats_resource = ExtResource("3_4ytb8")
+upgrade_recipe = Array[ExtResource("1_5v4qv")]([])
+metadata/_custom_type_script = "uid://6h5ryec31flm"

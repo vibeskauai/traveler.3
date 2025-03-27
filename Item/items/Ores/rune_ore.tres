@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://fbpsee00jgw3"]
+
+[ext_resource type="Script" uid="uid://6h5ryec31flm" path="res://Item/item_data.gd" id="1_sgobw"]
+[ext_resource type="Texture2D" uid="uid://bamhi8k0ijgtl" path="res://Item/items/Ores/rune_ore.png" id="2_sgobw"]
+
+[resource]
+script = ExtResource("1_sgobw")
+name = "Rune Ore"
+description = "Some ore you mined."
+item_type = "ore"
+stackable = true
+texture = ExtResource("2_sgobw")
+can_equip = false
+equip_slot = ""
+upgrade_recipe = Array[ExtResource("1_sgobw")]([])

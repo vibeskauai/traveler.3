@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cu5pexht2c0j1"]
+
+[ext_resource type="Script" uid="uid://6h5ryec31flm" path="res://Item/item_data.gd" id="1_cs2c7"]
+[ext_resource type="Texture2D" uid="uid://bs402ihx756rl" path="res://Item/items/Ores/dragon_ore.png" id="2_cs2c7"]
+
+[resource]
+script = ExtResource("1_cs2c7")
+name = "Dragon Ore"
+description = "DRAGON ORE!"
+item_type = "ore"
+stackable = true
+texture = ExtResource("2_cs2c7")
+can_equip = false
+equip_slot = ""
+upgrade_recipe = Array[ExtResource("1_cs2c7")]([])

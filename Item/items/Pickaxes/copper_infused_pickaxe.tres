@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=6 format=3 uid="uid://dqqej1i6huytf"]
+
+[ext_resource type="Texture2D" uid="uid://bakojvr0tfkh5" path="res://Item/items/Pickaxes/copper_infused_pickaxe.png" id="1_7jp4n"]
+[ext_resource type="Resource" uid="uid://mp777g71a7yi" path="res://Item/items/Pickaxes/silver_infused_pickaxe.tres" id="2_fops1"]
+[ext_resource type="Script" uid="uid://6h5ryec31flm" path="res://Item/item_data.gd" id="2_uwtx6"]
+[ext_resource type="Resource" uid="uid://p0bdxqwpl2m3" path="res://Resources/Stats/copper_infused_pickaxe_stats.tres" id="3_d3cdy"]
+[ext_resource type="Resource" uid="uid://0d5ts3qmagre" path="res://Item/items/Ores/copper_ore.tres" id="5_d3cdy"]
+
+[resource]
+script = ExtResource("2_uwtx6")
+name = "Copper Infused Pickaxe"
+description = "From Durmil."
+item_type = "pickaxe"
+stackable = false
+texture = ExtResource("1_7jp4n")
+can_equip = true
+equip_slot = "weapon"
+stats_resource = ExtResource("3_d3cdy")
+next_upgrade = ExtResource("2_fops1")
+upgrade_recipe = Array[ExtResource("2_uwtx6")]([ExtResource("5_d3cdy")])
+metadata/_custom_type_script = "uid://6h5ryec31flm"

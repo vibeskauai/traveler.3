@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://0d5ts3qmagre"]
+
+[ext_resource type="Script" uid="uid://6h5ryec31flm" path="res://Item/item_data.gd" id="1_pnpnm"]
+[ext_resource type="Texture2D" uid="uid://yv0dk1035hjb" path="res://Item/items/Ores/copper_ore.png" id="1_t45w8"]
+
+[resource]
+script = ExtResource("1_pnpnm")
+name = "Copper Ore"
+description = "Some ore you mined."
+item_type = "ore"
+stackable = true
+texture = ExtResource("1_t45w8")
+can_equip = false
+equip_slot = ""
+upgrade_recipe = Array[ExtResource("1_pnpnm")]([])

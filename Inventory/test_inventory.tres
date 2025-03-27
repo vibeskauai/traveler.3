@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://bcrhc6danfbvn"]
+
+[ext_resource type="Script" uid="uid://b8xfyqgcqwawc" path="res://Inventory/inventory_data.gd" id="1_lj4bq"]
+[ext_resource type="Script" uid="uid://b0dn1xti7hk5r" path="res://Inventory/slot_data.gd" id="2_42x4t"]
+[ext_resource type="Resource" uid="uid://bq1pxk3gpr8t" path="res://Item/items/Pickaxes/dragon_infused_pickaxe.tres" id="3_qp4eh"]
+[ext_resource type="Resource" uid="uid://0d5ts3qmagre" path="res://Item/items/Ores/copper_ore.tres" id="4_tx2fv"]
+
+[sub_resource type="Resource" id="Resource_tx2fv"]
+script = ExtResource("2_42x4t")
+item_data = ExtResource("3_qp4eh")
+quantity = 1
+metadata/_custom_type_script = "uid://b0dn1xti7hk5r"
+
+[sub_resource type="Resource" id="Resource_2gkdb"]
+script = ExtResource("2_42x4t")
+item_data = ExtResource("4_tx2fv")
+quantity = 100
+metadata/_custom_type_script = "uid://b0dn1xti7hk5r"
+
+[resource]
+script = ExtResource("1_lj4bq")
+slot_datas = Array[ExtResource("2_42x4t")]([SubResource("Resource_tx2fv"), SubResource("Resource_2gkdb"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://b8xfyqgcqwawc"
