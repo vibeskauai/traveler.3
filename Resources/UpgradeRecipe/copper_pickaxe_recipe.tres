@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeRecipe" load_steps=3 format=3 uid="uid://bue4y7c25wa7a"]
+
+[ext_resource type="Resource" uid="uid://0d5ts3qmagre" path="res://Item/items/Ores/copper_ore.tres" id="1_kqylh"]
+[ext_resource type="Script" uid="uid://dkoj3iixqerc1" path="res://Resources/UpgradeRecipe.gd" id="2_tb832"]
+
+[resource]
+script = ExtResource("2_tb832")
+resources = {
+"amount": 100,
+"ore": ExtResource("1_kqylh")
+}
+metadata/_custom_type_script = "uid://dkoj3iixqerc1"

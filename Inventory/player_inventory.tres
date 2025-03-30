@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=13 format=3 uid="uid://bcrhc6danfbvn"]
+
+[ext_resource type="Script" uid="uid://b8xfyqgcqwawc" path="res://Inventory/inventory_data.gd" id="1_lj4bq"]
+[ext_resource type="Script" uid="uid://b0dn1xti7hk5r" path="res://Inventory/slot_data.gd" id="2_42x4t"]
+[ext_resource type="Resource" uid="uid://h8k1wrxxr178" path="res://Item/items/Ores/silver_ore.tres" id="4_7jwrs"]
+[ext_resource type="Resource" uid="uid://0d5ts3qmagre" path="res://Item/items/Ores/copper_ore.tres" id="4_tx2fv"]
+[ext_resource type="Resource" uid="uid://t1hf8o35t8o7" path="res://Item/items/Ores/gold_ore.tres" id="5_7qiwr"]
+[ext_resource type="Resource" uid="uid://cu5pexht2c0j1" path="res://Item/items/Ores/dragon_ore.tres" id="5_tx2fv"]
+[ext_resource type="Resource" uid="uid://fbpsee00jgw3" path="res://Item/items/Ores/rune_ore.tres" id="6_2bxhj"]
+
+[sub_resource type="Resource" id="Resource_5tggb"]
+script = ExtResource("2_42x4t")
+item_data = ExtResource("4_tx2fv")
+quantity = 100
+metadata/_custom_type_script = "uid://b0dn1xti7hk5r"
+
+[sub_resource type="Resource" id="Resource_m3dgw"]
+script = ExtResource("2_42x4t")
+item_data = ExtResource("4_7jwrs")
+quantity = 100
+metadata/_custom_type_script = "uid://b0dn1xti7hk5r"
+
+[sub_resource type="Resource" id="Resource_elb5w"]
+script = ExtResource("2_42x4t")
+item_data = ExtResource("5_7qiwr")
+quantity = 100
+metadata/_custom_type_script = "uid://b0dn1xti7hk5r"
+
+[sub_resource type="Resource" id="Resource_i2nuh"]
+script = ExtResource("2_42x4t")
+item_data = ExtResource("6_2bxhj")
+quantity = 100
+metadata/_custom_type_script = "uid://b0dn1xti7hk5r"
+
+[sub_resource type="Resource" id="Resource_7077l"]
+script = ExtResource("2_42x4t")
+item_data = ExtResource("5_tx2fv")
+quantity = 100
+metadata/_custom_type_script = "uid://b0dn1xti7hk5r"
+
+[resource]
+script = ExtResource("1_lj4bq")
+slot_datas = Array[ExtResource("2_42x4t")]([SubResource("Resource_5tggb"), SubResource("Resource_m3dgw"), SubResource("Resource_elb5w"), SubResource("Resource_i2nuh"), SubResource("Resource_7077l"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://b8xfyqgcqwawc"

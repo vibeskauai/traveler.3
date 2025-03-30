@@ -10,7 +10,6 @@ texture = ExtResource("2_otrmc")
 item_type = "herb"
 description = "A rare flower with mystical properties."
 stackable = true
-upgrade_recipe = Array[ExtResource("1_7dg0n")]([])
 can_equip = false
 equip_slot = ""
 metadata/_custom_type_script = "uid://6h5ryec31flm"

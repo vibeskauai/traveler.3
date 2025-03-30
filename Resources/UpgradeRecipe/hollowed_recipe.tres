@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="UpgradeRecipe" load_steps=2 format=3 uid="uid://ckcxnspr2vmo"]
+
+[ext_resource type="Script" uid="uid://dkoj3iixqerc1" path="res://Resources/UpgradeRecipe.gd" id="2_5kpnd"]
+
+[resource]
+script = ExtResource("2_5kpnd")
+resources = {}
+metadata/_custom_type_script = "uid://dkoj3iixqerc1"

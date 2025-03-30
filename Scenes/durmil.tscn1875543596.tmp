@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cao5w3lingpoq"]
+[gd_scene load_steps=7 format=3 uid="uid://c8gv0ilfluita"]
 
 [ext_resource type="Texture2D" uid="uid://c8ssqksuki3re" path="res://Art/durmil_spritesheet.png" id="1_6a167"]
 [ext_resource type="Script" uid="uid://bppino00p17fa" path="res://Dialogue/interaction_area.gd" id="2_d5acf"]
 [ext_resource type="PackedScene" uid="uid://d0wkkfcf0pvxd" path="res://Item/ReceiveFromNPCComponent.tscn" id="3_nfd26"]
-[ext_resource type="Script" uid="uid://1k6l7ktqn6q7" path="res://Scripts/UpgradeComponent.gd" id="4_fr126"]
+[ext_resource type="Script" uid="uid://da53nbsl0lq7s" path="res://Scripts/UpgradeComponent.gd" id="4_fr126"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ipf1"]
 size = Vector2(28, 31)

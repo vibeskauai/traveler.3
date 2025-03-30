@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeRecipe" load_steps=3 format=3 uid="uid://clmltkufpxv0r"]
+
+[ext_resource type="Resource" uid="uid://t1hf8o35t8o7" path="res://Item/items/Ores/gold_ore.tres" id="1_shd80"]
+[ext_resource type="Script" uid="uid://dkoj3iixqerc1" path="res://Resources/UpgradeRecipe.gd" id="2_pe0lj"]
+
+[resource]
+script = ExtResource("2_pe0lj")
+resources = {
+"amount": 100,
+"ore": ExtResource("1_shd80")
+}
+metadata/_custom_type_script = "uid://dkoj3iixqerc1"

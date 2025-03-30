@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c63cvx6qqwa1h"]
 
 [ext_resource type="Script" uid="uid://bj6l0w0ve8xyc" path="res://Dialogue/voiced_dialogue.gd" id="1_21rtb"]
-[ext_resource type="AudioStream" uid="uid://n63ijav1ibr5" path="res://Dialogue/DurmilLines/Durmil Intro HQ.mp3" id="2_msxa4"]
+[ext_resource type="AudioStream" uid="uid://n63ijav1ibr5" path="res://Durmil/DurmilLines/Durmil Intro HQ.mp3" id="2_msxa4"]
 
 [node name="VoicedDialogueComponent" type="Node"]
 script = ExtResource("1_21rtb")

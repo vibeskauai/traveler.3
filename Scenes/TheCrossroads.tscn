@@ -1,9 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://bx3qeujpfyqcf"]
+[gd_scene load_steps=30 format=3 uid="uid://bx3qeujpfyqcf"]
 
 [ext_resource type="Script" uid="uid://d31kls7lk32l" path="res://Scripts/main.gd" id="1_sa6rd"]
 [ext_resource type="PackedScene" uid="uid://bob8810yi3kkl" path="res://Scenes/player.tscn" id="2_mtni4"]
 [ext_resource type="Texture2D" uid="uid://dq0mekbm0a26k" path="res://Art/grass.png" id="3_1ywhn"]
-[ext_resource type="Resource" uid="uid://bcrhc6danfbvn" path="res://Inventory/test_inventory.tres" id="3_mtni4"]
+[ext_resource type="Resource" uid="uid://bcrhc6danfbvn" path="res://Inventory/player_inventory.tres" id="3_mtni4"]
 [ext_resource type="Script" uid="uid://hnabyxqfk5md" path="res://Scripts/LevelTimeMap.gd" id="4_rsba5"]
 [ext_resource type="Texture2D" uid="uid://cwusml23na6xk" path="res://Art/sand tile.png" id="5_1al20"]
 [ext_resource type="Texture2D" uid="uid://b45xxhme657g" path="res://Art/Cave_Tiles.png" id="6_wfsrg"]
@@ -11,14 +11,15 @@
 [ext_resource type="Script" uid="uid://cc577u0fvy435" path="res://Interactable/chest.gd" id="8_haoca"]
 [ext_resource type="PackedScene" uid="uid://dfr6u3h177ppf" path="res://OreNodes/copper_node.tscn" id="9_i3og3"]
 [ext_resource type="PackedScene" uid="uid://dcsjpr6ilrvis" path="res://Scenes/rock_stone.tscn" id="10_4balw"]
-[ext_resource type="PackedScene" uid="uid://c8gv0ilfluita" path="res://Scenes/durmil.tscn" id="11_1ywhn"]
+[ext_resource type="PackedScene" uid="uid://cao5w3lingpoq" path="res://Scenes/durmil.tscn" id="11_1ywhn"]
 [ext_resource type="PackedScene" uid="uid://dtbq3hmpmarqm" path="res://Scenes/rock_wall.tscn" id="11_doijw"]
 [ext_resource type="Script" uid="uid://qqyx4djmr71h" path="res://Scripts/DayNightCycle.gd" id="12_yfkh0"]
 [ext_resource type="Script" uid="uid://jnvqmg0lc6jy" path="res://Inventory/inventory_interface.gd" id="13_xgj3m"]
 [ext_resource type="PackedScene" uid="uid://c4ml26pu4da5i" path="res://Inventory/inventory.tscn" id="14_7ft77"]
 [ext_resource type="PackedScene" uid="uid://717c1up5gk0n" path="res://Inventory/slot.tscn" id="15_cfuau"]
 [ext_resource type="PackedScene" uid="uid://byi6u2olp8m0c" path="res://Item/items/Herbs/magic_flower.tscn" id="18_1al20"]
-[ext_resource type="Script" uid="uid://15noy0beua2y" path="res://item_popup.gd" id="18_wfsrg"]
+[ext_resource type="Script" uid="uid://15noy0beua2y" path="res://Scripts/item_popup.gd" id="18_wfsrg"]
+[ext_resource type="Resource" uid="uid://jn4f30rs4ov3" path="res://Item/items/Herbs/magic_flower_item_data.tres" id="20_wfsrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hp1fr"]
 texture = ExtResource("3_1ywhn")
@@ -289,7 +290,7 @@ gradient = SubResource("Gradient_1ywhn")
 background_mode = 3
 ambient_light_source = 3
 glow_enabled = true
-glow_levels/1 = 1.94
+glow_levels/1 = 2.05
 glow_levels/2 = 1.43
 glow_levels/3 = 1.38
 glow_levels/4 = 1.16
@@ -1107,6 +1108,7 @@ script = ExtResource("18_wfsrg")
 
 [node name="MagicFlower" parent="." instance=ExtResource("18_1al20")]
 position = Vector2(170, 7)
+item_data = ExtResource("20_wfsrg")
 
 [node name="MagicFlower2" parent="." instance=ExtResource("18_1al20")]
 position = Vector2(-91, 6)

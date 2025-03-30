@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bwdb5f2a50og4"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=6 format=3 uid="uid://bwdb5f2a50og4"]
 
 [ext_resource type="Texture2D" uid="uid://h21aclfiopn4" path="res://Item/items/Pickaxes/Hollowed Pickaxe.png" id="1_w0jwo"]
+[ext_resource type="Resource" uid="uid://dqqej1i6huytf" path="res://Item/items/Pickaxes/copper_infused_pickaxe.tres" id="1_xqrs4"]
 [ext_resource type="Script" uid="uid://6h5ryec31flm" path="res://Item/item_data.gd" id="1_xxbiy"]
 [ext_resource type="Resource" uid="uid://bhbf14umfo26w" path="res://Resources/Stats/hollowed_pickaxe_stats.tres" id="3_8grbh"]
+[ext_resource type="Resource" uid="uid://ckcxnspr2vmo" path="res://Resources/UpgradeRecipe/hollowed_recipe.tres" id="5_gg7ex"]
 
 [resource]
 script = ExtResource("1_xxbiy")
@@ -11,7 +13,8 @@ texture = ExtResource("1_w0jwo")
 item_type = "pickaxe"
 description = "From Durmil."
 stackable = false
-upgrade_recipe = Array[ExtResource("1_xxbiy")]([])
+upgrade_recipe = ExtResource("5_gg7ex")
+next_upgrade = ExtResource("1_xqrs4")
 can_equip = true
 equip_slot = "weapon"
 stats_resource = ExtResource("3_8grbh")

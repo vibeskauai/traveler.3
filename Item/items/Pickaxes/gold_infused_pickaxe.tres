@@ -4,18 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://dsismr30tgh3c" path="res://Item/items/Pickaxes/gold_infused_pickaxe.png" id="1_ynu8b"]
 [ext_resource type="Resource" uid="uid://cmuqhm5d7yt3f" path="res://Item/items/Pickaxes/rune_infused_pickaxe.tres" id="2_4epet"]
 [ext_resource type="Resource" uid="uid://dqpir7b7iux8c" path="res://Resources/Stats/gold_infused_pickaxe_stats.tres" id="3_mu56n"]
-[ext_resource type="Resource" uid="uid://t1hf8o35t8o7" path="res://Item/items/Ores/gold_ore.tres" id="5_3qt5c"]
+[ext_resource type="Resource" uid="uid://clmltkufpxv0r" path="res://Resources/UpgradeRecipe/gold_pickaxe_recipe.tres" id="5_3qt5c"]
 
 [resource]
 script = ExtResource("1_qni2a")
 name = "Gold Infused Pickaxe"
-description = "From Durmil."
-item_type = "pickaxe"
-stackable = false
 texture = ExtResource("1_ynu8b")
-upgrade_recipe = Array[ExtResource("1_qni2a")]([ExtResource("5_3qt5c")])
+item_type = "pickaxe"
+description = "From Durmil."
+stackable = false
+upgrade_recipe = ExtResource("5_3qt5c")
+next_upgrade = ExtResource("2_4epet")
 can_equip = true
 equip_slot = "weapon"
 stats_resource = ExtResource("3_mu56n")
-next_upgrade = ExtResource("2_4epet")
 metadata/_custom_type_script = "uid://6h5ryec31flm"

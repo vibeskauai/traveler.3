@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://n63ijav1ibr5"
+path="res://.godot/imported/Durmil Intro HQ.mp3-2aae9039f8ed6653d1b8cb9ef812b4ec.mp3str"
+
+[deps]
+
+source_file="res://Durmil/DurmilLines/Durmil Intro HQ.mp3"
+dest_files=["res://.godot/imported/Durmil Intro HQ.mp3-2aae9039f8ed6653d1b8cb9ef812b4ec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
