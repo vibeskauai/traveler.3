@@ -7,12 +7,12 @@
 [resource]
 script = ExtResource("1_xxbiy")
 name = "The Hollowed Pickaxe"
-description = "From Durmil."
-item_type = "pickaxe"
-stackable = false
 texture = ExtResource("1_w0jwo")
+item_type = "pickaxe"
+description = "From Durmil."
+stackable = false
+upgrade_recipe = Array[ExtResource("1_xxbiy")]([])
 can_equip = true
 equip_slot = "weapon"
 stats_resource = ExtResource("3_8grbh")
-upgrade_recipe = Array[ExtResource("1_xxbiy")]([])
 metadata/_custom_type_script = "uid://6h5ryec31flm"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://bob8810yi3kkl"]
+[gd_scene load_steps=55 format=3 uid="uid://bob8810yi3kkl"]
 
-[ext_resource type="Script" uid="uid://chdfvdu3sexv7" path="res://Scripts/player_movement.gd" id="1_onrkg"]
-[ext_resource type="Script" uid="uid://bfantxyp8aauo" path="res://Scripts/player_camera.gd" id="2_6t5aa"]
-[ext_resource type="Script" uid="uid://ra7vm3lmvqfi" path="res://Scripts/player_animation_tree.gd" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://chdfvdu3sexv7" path="res://Scripts/PlayerMovement.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bfantxyp8aauo" path="res://Scripts/PlayerCamera.gd" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://ra7vm3lmvqfi" path="res://Scripts/PlayerAnimationTree.gd" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bxxpxfbll5xh1" path="res://Scenes/interacting_component.tscn" id="4_vgqql"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4flbx"]
 load_path = "res://.godot/imported/Traveler Spritesheet (NO BELLY).png-b142952bb1cde9ef074826b1f73ba1d4.ctex"
@@ -467,10 +468,9 @@ transitions = ["idle", "walk", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(0, 47.284)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(0, -16)
-collision_layer = 2
+collision_layer = 3
 collision_mask = 5
 script = ExtResource("1_onrkg")
 
@@ -509,3 +509,5 @@ script = ExtResource("2_6t5aa")
 [node name="PlayerAnimation" type="Node2D" parent="." node_paths=PackedStringArray("animation_tree")]
 script = ExtResource("2_onrkg")
 animation_tree = NodePath("../AnimationTree")
+
+[node name="InteractingComponent" parent="." instance=ExtResource("4_vgqql")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6tugwkce6af2"]
 
-[ext_resource type="Script" uid="uid://b1lbhmua01k5v" path="res://Scripts/ore_node.gd" id="1_qp5p3"]
+[ext_resource type="Script" uid="uid://b1lbhmua01k5v" path="res://Scripts/OreNodes.gd" id="1_qp5p3"]
 [ext_resource type="Texture2D" uid="uid://c8uqcx1yqlnat" path="res://OreNodes/rune_node.png" id="2_u3xix"]
 [ext_resource type="AudioStream" uid="uid://b7mo0nms4wtjp" path="res://Sound Effects/mining sound effect.mp3" id="3_ymixr"]
 [ext_resource type="AudioStream" uid="uid://fahiinq63qr5" path="res://Sound Effects/rock breaking.mp3" id="4_0ne7w"]

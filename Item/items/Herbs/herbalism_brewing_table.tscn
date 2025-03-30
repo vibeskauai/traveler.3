@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bucaauspw3kcy"]
+
+[ext_resource type="Texture2D" uid="uid://cu6cycmv0f3r4" path="res://Item/items/Herbs/Alchemy_Table_02-Sheet.png" id="1_p6d21"]
+[ext_resource type="PackedScene" uid="uid://bxxpxfbll5xh1" path="res://Scenes/interacting_component.tscn" id="2_i07u5"]
+
+[node name="HerbalismBrewingTable" type="Node2D"]
+position = Vector2(0, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p6d21")
+hframes = 11
+vframes = 6
+region_enabled = true
+region_rect = Rect2(0, 17, 528, 303)
+
+[node name="InteractingComponent" parent="." instance=ExtResource("2_i07u5")]
+position = Vector2(0, 3.72)
+scale = Vector2(-3.66366, -3.66366)

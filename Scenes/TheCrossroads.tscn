@@ -1,10 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://bx3qeujpfyqcf"]
+[gd_scene load_steps=29 format=3 uid="uid://bx3qeujpfyqcf"]
 
 [ext_resource type="Script" uid="uid://d31kls7lk32l" path="res://Scripts/main.gd" id="1_sa6rd"]
 [ext_resource type="PackedScene" uid="uid://bob8810yi3kkl" path="res://Scenes/player.tscn" id="2_mtni4"]
 [ext_resource type="Texture2D" uid="uid://dq0mekbm0a26k" path="res://Art/grass.png" id="3_1ywhn"]
 [ext_resource type="Resource" uid="uid://bcrhc6danfbvn" path="res://Inventory/test_inventory.tres" id="3_mtni4"]
-[ext_resource type="Script" uid="uid://hnabyxqfk5md" path="res://Scripts/level_tile_map.gd" id="4_rsba5"]
+[ext_resource type="Script" uid="uid://hnabyxqfk5md" path="res://Scripts/LevelTimeMap.gd" id="4_rsba5"]
 [ext_resource type="Texture2D" uid="uid://cwusml23na6xk" path="res://Art/sand tile.png" id="5_1al20"]
 [ext_resource type="Texture2D" uid="uid://b45xxhme657g" path="res://Art/Cave_Tiles.png" id="6_wfsrg"]
 [ext_resource type="PackedScene" uid="uid://cuhce15kjfekh" path="res://Interactable/chest.tscn" id="7_pfwsi"]
@@ -13,10 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://dcsjpr6ilrvis" path="res://Scenes/rock_stone.tscn" id="10_4balw"]
 [ext_resource type="PackedScene" uid="uid://c8gv0ilfluita" path="res://Scenes/durmil.tscn" id="11_1ywhn"]
 [ext_resource type="PackedScene" uid="uid://dtbq3hmpmarqm" path="res://Scenes/rock_wall.tscn" id="11_doijw"]
-[ext_resource type="Script" uid="uid://qqyx4djmr71h" path="res://Scripts/day_night_cycle.gd" id="12_yfkh0"]
+[ext_resource type="Script" uid="uid://qqyx4djmr71h" path="res://Scripts/DayNightCycle.gd" id="12_yfkh0"]
 [ext_resource type="Script" uid="uid://jnvqmg0lc6jy" path="res://Inventory/inventory_interface.gd" id="13_xgj3m"]
 [ext_resource type="PackedScene" uid="uid://c4ml26pu4da5i" path="res://Inventory/inventory.tscn" id="14_7ft77"]
 [ext_resource type="PackedScene" uid="uid://717c1up5gk0n" path="res://Inventory/slot.tscn" id="15_cfuau"]
+[ext_resource type="PackedScene" uid="uid://byi6u2olp8m0c" path="res://Item/items/Herbs/magic_flower.tscn" id="18_1al20"]
+[ext_resource type="Script" uid="uid://15noy0beua2y" path="res://item_popup.gd" id="18_wfsrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hp1fr"]
 texture = ExtResource("3_1ywhn")
@@ -277,18 +279,30 @@ texture = ExtResource("6_wfsrg")
 [sub_resource type="TileSet" id="TileSet_n2j41"]
 sources/0 = SubResource("TileSetAtlasSource_y6nhl")
 
+[sub_resource type="Gradient" id="Gradient_1ywhn"]
+offsets = PackedFloat32Array(0.0588235, 0.955882)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rsba5"]
+gradient = SubResource("Gradient_1ywhn")
+
 [sub_resource type="Environment" id="Environment_aendi"]
 background_mode = 3
 ambient_light_source = 3
-glow_levels/5 = 0.0
+glow_enabled = true
+glow_levels/1 = 1.94
+glow_levels/2 = 1.43
+glow_levels/3 = 1.38
+glow_levels/4 = 1.16
+glow_levels/5 = 1.54
 glow_normalized = true
 glow_intensity = 1.08
 glow_strength = 0.7
-glow_bloom = 0.2
-glow_hdr_threshold = 0.52
+glow_bloom = 0.1
+glow_blend_mode = 1
+glow_hdr_threshold = 0.37
 adjustment_enabled = true
-adjustment_brightness = 1.1
 adjustment_saturation = 1.3
+adjustment_color_correction = SubResource("GradientTexture2D_rsba5")
 
 [node name="TheCrossroads" type="Node2D"]
 y_sort_enabled = true
@@ -335,564 +349,700 @@ script = null
 [node name="RocksFolder" type="Node" parent="."]
 
 [node name="RockWall148" parent="RocksFolder" instance=ExtResource("10_4balw")]
-z_index = -2
+y_sort_enabled = true
 position = Vector2(-48, 68)
 
 [node name="RockWall149" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-52, 86)
 
 [node name="RockWall150" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-105, 123)
 
 [node name="RockWall151" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-83, 122)
 
 [node name="RockWall184" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-95, 218)
 
 [node name="RockWall185" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-70, 219)
 
 [node name="RockWall186" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-50, 203)
 
 [node name="RockWall199" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-32, 264)
 
 [node name="RockWall200" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-32, 288)
 
 [node name="RockWall202" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-44, 309)
 
 [node name="RockWall201" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-62, 329)
 
 [node name="RockWall187" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-52, 154)
 
 [node name="RockWall188" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-67, 138)
 
 [node name="RockWall189" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(154, 157)
 
 [node name="RockWall190" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(179, 157)
 
 [node name="RockWall191" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(143, 249)
 
 [node name="RockWall196" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(129, 265)
 
 [node name="RockWall197" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(120, 283)
 
 [node name="RockWall198" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(128, 302)
 
 [node name="RockWall192" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(135, 166)
 
 [node name="RockWall193" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(158, 230)
 
 [node name="RockWall194" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(178, 239)
 
 [node name="RockWall195" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(134, 215)
 
 [node name="RockWall176" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-83, 345)
 
 [node name="RockWall177" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-105, 344)
 
 [node name="RockWall178" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-45, 401)
 
 [node name="RockWall179" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-48, 378)
 
 [node name="RockWall180" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(157, 340)
 
 [node name="RockWall181" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(179, 340)
 
 [node name="RockWall182" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(125, 400)
 
 [node name="RockWall183" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(124, 374)
 
 [node name="RockWall152" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(113, 72)
 
 [node name="RockWall153" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(125, 92)
 
 [node name="RockWall154" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(157, 126)
 
 [node name="RockWall155" parent="RocksFolder" instance=ExtResource("10_4balw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(179, 131)
 
 [node name="RockWall156" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -126)
 
 [node name="RockWall157" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -156)
 
 [node name="RockWall158" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -189)
 
 [node name="RockWall159" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -219)
 
 [node name="RockWall168" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(110, -248)
 
 [node name="RockWall169" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(141, -248)
 
 [node name="RockWall170" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(172, -248)
 
 [node name="RockWall171" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(203, -248)
 
 [node name="RockWall172" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(204, -126)
 
 [node name="RockWall173" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(204, -156)
 
 [node name="RockWall174" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(204, -189)
 
 [node name="RockWall175" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(204, -219)
 
 [node name="RockWall" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-98, 45)
 
 [node name="RockWall2" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-67, 45)
 
 [node name="RockWall3" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-36, 45)
 
 [node name="RockWall4" parent="RocksFolder" instance=ExtResource("11_doijw")]
-z_index = -2
+y_sort_enabled = true
 position = Vector2(-5, 45)
 
 [node name="RockWall160" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -248)
 
 [node name="RockWall161" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-97, -248)
 
 [node name="RockWall162" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-66, -248)
 
 [node name="RockWall163" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-35, -248)
 
 [node name="RockWall164" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -248)
 
 [node name="RockWall165" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-97, -248)
 
 [node name="RockWall166" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-66, -248)
 
 [node name="RockWall167" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-35, -248)
 
 [node name="RockWall114" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-292, 552)
 
 [node name="RockWall115" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-261, 552)
 
 [node name="RockWall116" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-230, 552)
 
 [node name="RockWall117" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-199, 552)
 
 [node name="RockWall118" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-52, 553)
 
 [node name="RockWall119" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-21, 553)
 
 [node name="RockWall120" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(6, 556)
 
 [node name="RockWall121" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-174, 552)
 
 [node name="RockWall276" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-441, 551)
 
 [node name="RockWall277" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-410, 551)
 
 [node name="RockWall278" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-379, 551)
 
 [node name="RockWall279" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-348, 551)
 
 [node name="RockWall280" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-323, 551)
 
 [node name="RockWall122" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-143, 552)
 
 [node name="RockWall123" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-112, 552)
 
 [node name="RockWall124" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-81, 552)
 
 [node name="RockWall125" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(126, 551)
 
 [node name="RockWall126" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(157, 551)
 
 [node name="RockWall127" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(188, 551)
 
 [node name="RockWall128" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(219, 551)
 
 [node name="RockWall129" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(366, 552)
 
 [node name="RockWall130" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(397, 552)
 
 [node name="RockWall132" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(244, 551)
 
 [node name="RockWall133" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(275, 551)
 
 [node name="RockWall134" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(306, 551)
 
 [node name="RockWall135" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(337, 551)
 
 [node name="RockWall287" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(426, 553)
 
 [node name="RockWall288" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(457, 553)
 
 [node name="RockWall289" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(488, 553)
 
 [node name="RockWall5" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(83, 45)
 
 [node name="RockWall6" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(114, 45)
 
 [node name="RockWall7" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(145, 46)
 
 [node name="RockWall136" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(83, 45)
 
 [node name="RockWall139" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(177, 47)
 
 [node name="RockWall9" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 77)
 
 [node name="RockWall10" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 109)
 
 [node name="RockWall11" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 141)
 
 [node name="RockWall140" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, -51)
 
 [node name="RockWall141" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, -19)
 
 [node name="RockWall142" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 13)
 
 [node name="RockWall143" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 45)
 
 [node name="RockWall144" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -55)
 
 [node name="RockWall145" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, -23)
 
 [node name="RockWall146" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, 9)
 
 [node name="RockWall147" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-128, 41)
 
 [node name="RockWall12" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 173)
 
 [node name="RockWall13" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 205)
 
 [node name="RockWall14" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 237)
 
 [node name="RockWall15" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 267)
 
 [node name="RockWall16" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 299)
 
 [node name="RockWall17" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 331)
 
 [node name="RockWall18" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 363)
 
 [node name="RockWall19" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(207, 395)
 
 [node name="RockWall32" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 78)
 
 [node name="RockWall57" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(98, 553)
 
 [node name="RockWall131" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(68, 554)
 
 [node name="RockWall33" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 110)
 
 [node name="RockWall34" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 142)
 
 [node name="RockWall35" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 174)
 
 [node name="RockWall36" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 206)
 
 [node name="RockWall37" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 238)
 
 [node name="RockWall38" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 268)
 
 [node name="RockWall39" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 300)
 
 [node name="RockWall40" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-129, 332)
 
 [node name="RockWall20" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(198, 426)
 
 [node name="RockWall21" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(167, 427)
 
 [node name="RockWall22" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(133, 427)
 
 [node name="RockWall25" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-131, 363)
 
 [node name="RockWall28" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-54, 429)
 
 [node name="RockWall76" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-88, 431)
 
 [node name="RockWall29" parent="RocksFolder" instance=ExtResource("11_doijw")]
 visible = false
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-58, 427)
 
 [node name="RockWall30" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-131, 395)
 
 [node name="RockWall41" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-21, 430)
 
 [node name="RockWall42" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(8, 462)
 
 [node name="RockWall26" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(6, 493)
 
 [node name="RockWall43" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(6, 525)
 
 [node name="RockWall44" parent="RocksFolder" instance=ExtResource("11_doijw")]
-z_index = -2
+y_sort_enabled = true
 position = Vector2(100, 428)
 
 [node name="RockWall45" parent="RocksFolder" instance=ExtResource("11_doijw")]
-z_index = -2
+y_sort_enabled = true
 position = Vector2(70, 460)
 
 [node name="RockWall46" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(68, 491)
 
 [node name="RockWall47" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(69, 522)
 
 [node name="RockWall31" parent="RocksFolder" instance=ExtResource("11_doijw")]
 z_index = -2
+y_sort_enabled = true
 position = Vector2(-120, 426)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -911,6 +1061,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("13_xgj3m")
 
 [node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("14_7ft77")]
@@ -936,3 +1087,33 @@ offset_left = 1080.22
 offset_top = 574.565
 offset_right = 1144.22
 offset_bottom = 638.565
+
+[node name="ItemPopupLabel" type="Label" parent="UI"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -37.0
+offset_right = 53.0
+offset_bottom = -11.0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("18_wfsrg")
+
+[node name="MagicFlower" parent="." instance=ExtResource("18_1al20")]
+position = Vector2(170, 7)
+
+[node name="MagicFlower2" parent="." instance=ExtResource("18_1al20")]
+position = Vector2(-91, 6)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -15.0
+autoplay = true
+
+[connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
+[connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]

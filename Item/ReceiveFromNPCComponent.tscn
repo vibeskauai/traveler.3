@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0wkkfcf0pvxd"]
+
+[ext_resource type="Script" uid="uid://q4g1gcno1u5l" path="res://Durmil/give_pickaxe.gd" id="1_xcwpb"]
+[ext_resource type="Resource" uid="uid://dpffko51doa1e" path="res://Item/items/Pickaxes/hollowed_pickaxe_slot_data.tres" id="2_35rx8"]
+
+[node name="GivePickaxe" type="Node"]
+script = ExtResource("1_xcwpb")
+item_to_give = ExtResource("2_35rx8")

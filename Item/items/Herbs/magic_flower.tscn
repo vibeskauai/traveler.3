@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://byi6u2olp8m0c"]
+
+[ext_resource type="Script" uid="uid://bnglm81crtkn1" path="res://Item/items/Herbs/magic_flower.gd" id="1_7ejfn"]
+[ext_resource type="Texture2D" uid="uid://der1qrq1pwu38" path="res://Item/items/Herbs/flower_monsterous.png" id="1_iue0s"]
+[ext_resource type="Resource" uid="uid://ccwvuhnxhp0yj" path="res://Item/items/Herbs/magic_flower_slot_data.tres" id="2_7ejfn"]
+[ext_resource type="PackedScene" uid="uid://br2ncsv3drqcm" path="res://Scenes/Interactable.tscn" id="4_7ejfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mplh"]
+size = Vector2(14, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l0x1"]
+size = Vector2(20, 27)
+
+[node name="MagicFlower" type="StaticBody2D" groups=["interactable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_7ejfn")
+slot_data = ExtResource("2_7ejfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iue0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_7mplh")
+
+[node name="Interactable" parent="." instance=ExtResource("4_7ejfn")]
+collision_layer = 4
+interact_name = "Gather Plant"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_4l0x1")
+
+[connection signal="body_entered" from="Interactable" to="." method="_on_interactable_body_entered"]

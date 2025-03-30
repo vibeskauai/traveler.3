@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://jn4f30rs4ov3"]
+
+[ext_resource type="Script" uid="uid://6h5ryec31flm" path="res://Item/item_data.gd" id="1_7dg0n"]
+[ext_resource type="Texture2D" uid="uid://der1qrq1pwu38" path="res://Item/items/Herbs/flower_monsterous.png" id="2_otrmc"]
+
+[resource]
+script = ExtResource("1_7dg0n")
+name = "Magic Flower"
+texture = ExtResource("2_otrmc")
+item_type = "herb"
+description = "A rare flower with mystical properties."
+stackable = true
+upgrade_recipe = Array[ExtResource("1_7dg0n")]([])
+can_equip = false
+equip_slot = ""
+metadata/_custom_type_script = "uid://6h5ryec31flm"

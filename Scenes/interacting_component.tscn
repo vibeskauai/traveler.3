@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxxpxfbll5xh1"]
+
+[ext_resource type="Script" uid="uid://crn54aay4o7dp" path="res://Scripts/interacting_component.gd" id="1_hkgi3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcss1"]
+size = Vector2(16, 15)
+
+[node name="InteractingComponent" type="Node2D"]
+script = ExtResource("1_hkgi3")
+
+[node name="InteractRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+shape = SubResource("RectangleShape2D_wcss1")
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
