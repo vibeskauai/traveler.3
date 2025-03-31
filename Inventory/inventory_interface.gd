@@ -4,8 +4,28 @@ signal drop_slot_data(slot_data: SlotData)
 
 var grabbed_slot_data: SlotData
 
-@onready var player_inventory: PanelContainer = $PlayerInventory
+@onready var player_inventory: PanelContainer = $InventoryPanel
 @onready var grabbed_slot: PanelContainer = $GrabbedSlot
+
+func _ready():
+	$ArmorButton.connect("pressed", Callable(self, "_on_ArmorButton_pressed"))
+	$InventoryButton.connect("pressed", Callable(self, "_on_InventoryButton_pressed"))
+	$StatsButton.connect("pressed", Callable(self, "_on_StatsButton_pressed"))
+
+func _on_ArmorButton_pressed():
+	$InventoryPanel.hide()
+	$StatsPanel.hide()
+	$ArmorPanel.show()
+
+func _on_InventoryButton_pressed():
+	$ArmorPanel.hide()
+	$StatsPanel.hide()
+	$InventoryPanel.show()
+
+func _on_StatsButton_pressed():
+	$ArmorPanel.hide()
+	$InventoryPanel.hide()
+	$StatsPanel.show()
 
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:

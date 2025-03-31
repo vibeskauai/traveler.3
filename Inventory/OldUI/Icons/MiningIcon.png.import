@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf0s5iml2blxf"
-path="res://.godot/imported/backpack icon.png-f85bf00a89f2d2f3a423ca9aab1833c9.ctex"
+uid="uid://bdfn3j5iccvn"
+path="res://.godot/imported/MiningIcon.png-f5aef3a514a6d86947d69980e647357b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/backpack icon.png"
-dest_files=["res://.godot/imported/backpack icon.png-f85bf00a89f2d2f3a423ca9aab1833c9.ctex"]
+source_file="res://Inventory/OldUI/Icons/MiningIcon.png"
+dest_files=["res://.godot/imported/MiningIcon.png-f5aef3a514a6d86947d69980e647357b.ctex"]
 
 [params]
 

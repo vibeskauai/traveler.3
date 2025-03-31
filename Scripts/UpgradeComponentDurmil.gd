@@ -54,7 +54,7 @@ func remove_ores(upgrade_recipe: UpgradeRecipe):
 		if slot_data and slot_data.item_data and slot_data.item_data.name == ore_name:
 			if slot_data.quantity >= upgrade_recipe.resources["amount"]:
 				slot_data.quantity -= upgrade_recipe.resources["amount"]
-				print("Removed", upgrade_recipe.resources["amount"], "of", ore_name, "from inventory")
+				print("Removed ", upgrade_recipe.resources["amount"], " of ", ore_name, " from inventory")
 			else:
 				print("Not enough", ore_name, "in inventory to remove")
 		

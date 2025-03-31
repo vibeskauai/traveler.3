@@ -1,0 +1,319 @@
+[gd_scene load_steps=23 format=3 uid="uid://bnwq2k0blktug"]
+
+[ext_resource type="Script" uid="uid://jnvqmg0lc6jy" path="res://Inventory/inventory_interface.gd" id="1_ckldv"]
+[ext_resource type="PackedScene" uid="uid://c4ml26pu4da5i" path="res://Inventory/inventory.tscn" id="2_xhasy"]
+[ext_resource type="Texture2D" uid="uid://cpok10fk2nufp" path="res://Inventory/OldUI/gray-texture_1253-156.png" id="3_416hp"]
+[ext_resource type="Texture2D" uid="uid://bdfn3j5iccvn" path="res://Inventory/OldUI/Icons/MiningIcon.png" id="4_2443v"]
+[ext_resource type="Texture2D" uid="uid://cfcsfm4cqgtx7" path="res://Inventory/OldUI/Icons/HerbalismIcon.png" id="5_pjkyr"]
+[ext_resource type="Texture2D" uid="uid://b5ipf4c4gxdil" path="res://Inventory/OldUI/Icons/CombatIcon.png" id="6_fbc8m"]
+[ext_resource type="Script" uid="uid://cvf4qitf46vhd" path="res://Inventory/armorpanel.gd" id="7_37ije"]
+[ext_resource type="PackedScene" uid="uid://717c1up5gk0n" path="res://Inventory/slot.tscn" id="8_1n3th"]
+[ext_resource type="Texture2D" uid="uid://cf0s5iml2blxf" path="res://Inventory/OldUI/backpack icon.png" id="9_baxb7"]
+[ext_resource type="Script" uid="uid://2a2u186t4xfw" path="res://Inventory/inventory_button.gd" id="10_0javd"]
+[ext_resource type="Texture2D" uid="uid://dls2am2x0trxc" path="res://Inventory/OldUI/Stats Icon.png" id="11_5xrn3"]
+[ext_resource type="Script" uid="uid://d2pn523c8q8ff" path="res://Inventory/skills_button.gd" id="12_8iyk4"]
+[ext_resource type="Texture2D" uid="uid://cfqb8ws5bdeb3" path="res://Inventory/OldUI/armour weapon icon.png" id="13_5hskc"]
+[ext_resource type="Script" uid="uid://kdt137dw3mc8" path="res://Inventory/armor_button.gd" id="14_hgmi7"]
+[ext_resource type="Script" uid="uid://15noy0beua2y" path="res://Scripts/item_popup.gd" id="15_ug5bk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytnni"]
+texture = ExtResource("3_416hp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mykux"]
+texture = ExtResource("3_416hp")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pthx"]
+bg_color = Color(0.850135, 0.588505, 0.0737342, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0rdw"]
+texture = ExtResource("3_416hp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pthx"]
+texture = ExtResource("3_416hp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_38vb1"]
+texture = ExtResource("3_416hp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btyfs"]
+texture = ExtResource("3_416hp")
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="InventoryInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ckldv")
+
+[node name="InventoryPanel" parent="InventoryInterface" instance=ExtResource("2_xhasy")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -47.775
+offset_top = -49.435
+offset_right = -7.77502
+offset_bottom = -9.435
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ytnni")
+
+[node name="StatsPanel" parent="InventoryInterface" instance=ExtResource("2_xhasy")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -424.0
+offset_right = -9.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mykux")
+script = null
+
+[node name="TotalLevelLabelMargin" type="MarginContainer" parent="InventoryInterface/StatsPanel"]
+layout_mode = 2
+theme_override_constants/margin_top = -325
+
+[node name="TotalLevelLabel" type="Label" parent="InventoryInterface/StatsPanel/TotalLevelLabelMargin"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="StatsContainer" type="VBoxContainer" parent="InventoryInterface/StatsPanel"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="InventoryInterface/StatsPanel/StatsContainer"]
+layout_mode = 2
+
+[node name="MiningRow" type="VBoxContainer" parent="InventoryInterface/StatsPanel/StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryInterface/StatsPanel/StatsContainer/MiningRow"]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_top = 75
+
+[node name="MiningIcon" type="TextureRect" parent="InventoryInterface/StatsPanel/StatsContainer/MiningRow/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_2443v")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="MiningLabel" type="Label" parent="InventoryInterface/StatsPanel/StatsContainer/MiningRow"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="InventoryInterface/StatsPanel/StatsContainer/MiningRow"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_5pthx")
+show_percentage = false
+
+[node name="HerbalismRow" type="VBoxContainer" parent="InventoryInterface/StatsPanel/StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryInterface/StatsPanel/StatsContainer/HerbalismRow"]
+layout_mode = 2
+theme_override_constants/margin_left = 39
+
+[node name="HerbalismIcon" type="TextureRect" parent="InventoryInterface/StatsPanel/StatsContainer/HerbalismRow/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_pjkyr")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="HerbalismLabel" type="Label" parent="InventoryInterface/StatsPanel/StatsContainer/HerbalismRow"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="InventoryInterface/StatsPanel/StatsContainer/HerbalismRow"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+show_percentage = false
+
+[node name="CombatRow" type="VBoxContainer" parent="InventoryInterface/StatsPanel/StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryInterface/StatsPanel/StatsContainer/CombatRow"]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+
+[node name="CombatIcon" type="TextureRect" parent="InventoryInterface/StatsPanel/StatsContainer/CombatRow/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_fbc8m")
+expand_mode = 2
+stretch_mode = 2
+
+[node name="CombatLabel" type="Label" parent="InventoryInterface/StatsPanel/StatsContainer/CombatRow"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="InventoryInterface/StatsPanel/StatsContainer/CombatRow"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+show_percentage = false
+
+[node name="ArmorPanel" parent="InventoryInterface" instance=ExtResource("2_xhasy")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -424.0
+offset_right = -9.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_w0rdw")
+script = ExtResource("7_37ije")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryInterface/ArmorPanel"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HelmetSlot" type="Button" parent="InventoryInterface/ArmorPanel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ChestRow" type="HBoxContainer" parent="InventoryInterface/ArmorPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="WeaponSlot" type="Button" parent="InventoryInterface/ArmorPanel/VBoxContainer/ChestRow"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ChestSlot" type="Button" parent="InventoryInterface/ArmorPanel/VBoxContainer/ChestRow"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ShieldSlot" type="Button" parent="InventoryInterface/ArmorPanel/VBoxContainer/ChestRow"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="LegsSlot" type="Button" parent="InventoryInterface/ArmorPanel/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="InventoryInterface/ArmorPanel"]
+layout_mode = 2
+theme_override_constants/margin_top = -310
+
+[node name="Equipment" type="Label" parent="InventoryInterface/ArmorPanel/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "Equipment"
+horizontal_alignment = 1
+
+[node name="GrabbedSlot" parent="InventoryInterface" instance=ExtResource("8_1n3th")]
+visible = false
+modulate = Color(1, 1, 1, 0.45098)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_left = 1080.22
+offset_top = 574.565
+offset_right = 1144.22
+offset_bottom = 638.565
+
+[node name="InventoryButton" type="Button" parent="InventoryInterface"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -500.0
+offset_right = -222.0
+offset_bottom = -432.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5pthx")
+toggle_mode = true
+icon = ExtResource("9_baxb7")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("10_0javd")
+
+[node name="StatsButton" type="Button" parent="InventoryInterface"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -182.0
+offset_top = -500.0
+offset_right = -114.0
+offset_bottom = -432.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_38vb1")
+icon = ExtResource("11_5xrn3")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("12_8iyk4")
+
+[node name="ArmorButton" type="Button" parent="InventoryInterface"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -499.0
+offset_right = -9.0
+offset_bottom = -431.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_btyfs")
+icon = ExtResource("13_5hskc")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("14_hgmi7")
+
+[node name="ItemPopupLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -37.0
+offset_right = 53.0
+offset_bottom = -11.0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("15_ug5bk")
+
+[connection signal="gui_input" from="InventoryInterface" to="InventoryInterface" method="_on_gui_input"]

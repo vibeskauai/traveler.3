@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfqb8ws5bdeb3"
-path="res://.godot/imported/armour weapon icon.png-5d41dc5bffbb6431c410f7d26971f2c3.ctex"
+uid="uid://dxhywro0k422l"
+path="res://.godot/imported/stone_background.png-2cae26e8137c6d5053a24dddca9874d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/armour weapon icon.png"
-dest_files=["res://.godot/imported/armour weapon icon.png-5d41dc5bffbb6431c410f7d26971f2c3.ctex"]
+source_file="res://Inventory/OldUI/stone_background.png"
+dest_files=["res://.godot/imported/stone_background.png-2cae26e8137c6d5053a24dddca9874d1.ctex"]
 
 [params]
 

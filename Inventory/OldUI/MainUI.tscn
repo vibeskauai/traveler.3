@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://bkyafsedfg2ii"]
 
-[ext_resource type="Texture2D" uid="uid://dxhywro0k422l" path="res://UI/stone_background.png" id="1_fdbdo"]
-[ext_resource type="Texture2D" uid="uid://cf0s5iml2blxf" path="res://UI/backpack icon.png" id="2_wa2eh"]
-[ext_resource type="Texture2D" uid="uid://dls2am2x0trxc" path="res://UI/Stats Icon.png" id="5_8cqdv"]
-[ext_resource type="Texture2D" uid="uid://bdfn3j5iccvn" path="res://UI/Icons/MiningIcon.png" id="5_e10a1"]
+[ext_resource type="Texture2D" uid="uid://dxhywro0k422l" path="res://Inventory/OldUI/stone_background.png" id="1_fdbdo"]
+[ext_resource type="Texture2D" uid="uid://cf0s5iml2blxf" path="res://Inventory/OldUI/backpack icon.png" id="2_wa2eh"]
+[ext_resource type="Texture2D" uid="uid://dls2am2x0trxc" path="res://Inventory/OldUI/Stats Icon.png" id="5_8cqdv"]
+[ext_resource type="Texture2D" uid="uid://bdfn3j5iccvn" path="res://Inventory/OldUI/Icons/MiningIcon.png" id="5_e10a1"]
 [ext_resource type="AudioStream" uid="uid://by0je44s6k8xk" path="res://Sound Effects/levelupmining.mp3" id="5_tinas"]
-[ext_resource type="Texture2D" uid="uid://cfqb8ws5bdeb3" path="res://UI/armour weapon icon.png" id="6_475mu"]
+[ext_resource type="Texture2D" uid="uid://cfqb8ws5bdeb3" path="res://Inventory/OldUI/armour weapon icon.png" id="6_475mu"]
 [ext_resource type="AudioStream" uid="uid://5tnrpvkxpirh" path="res://Sound Effects/Herblore_level_up_(with_unlocks).ogg" id="6_e10a1"]
-[ext_resource type="Texture2D" uid="uid://cfcsfm4cqgtx7" path="res://UI/Icons/HerbalismIcon.png" id="6_i0lr5"]
+[ext_resource type="Texture2D" uid="uid://cfcsfm4cqgtx7" path="res://Inventory/OldUI/Icons/HerbalismIcon.png" id="6_i0lr5"]
 [ext_resource type="AudioStream" uid="uid://dic7pgtb8dfm0" path="res://Sound Effects/Combat_level_up.ogg" id="7_i0lr5"]
-[ext_resource type="Texture2D" uid="uid://b5ipf4c4gxdil" path="res://UI/Icons/CombatIcon.png" id="7_r3ckc"]
+[ext_resource type="Texture2D" uid="uid://b5ipf4c4gxdil" path="res://Inventory/OldUI/Icons/CombatIcon.png" id="7_r3ckc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_44ib0"]
 texture = ExtResource("1_fdbdo")

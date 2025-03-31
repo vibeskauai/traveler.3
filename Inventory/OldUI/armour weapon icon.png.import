@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfcsfm4cqgtx7"
-path="res://.godot/imported/HerbalismIcon.png-46a51c954acc7d34576b912df8a9819e.ctex"
+uid="uid://cfqb8ws5bdeb3"
+path="res://.godot/imported/armour weapon icon.png-217acbe8d1e84679e2b66523f0c40d2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Icons/HerbalismIcon.png"
-dest_files=["res://.godot/imported/HerbalismIcon.png-46a51c954acc7d34576b912df8a9819e.ctex"]
+source_file="res://Inventory/OldUI/armour weapon icon.png"
+dest_files=["res://.godot/imported/armour weapon icon.png-217acbe8d1e84679e2b66523f0c40d2d.ctex"]
 
 [params]
 

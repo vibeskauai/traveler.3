@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bx3qeujpfyqcf"]
+[gd_scene load_steps=27 format=3 uid="uid://bx3qeujpfyqcf"]
 
 [ext_resource type="Script" uid="uid://d31kls7lk32l" path="res://Scripts/main.gd" id="1_sa6rd"]
 [ext_resource type="PackedScene" uid="uid://bob8810yi3kkl" path="res://Scenes/player.tscn" id="2_mtni4"]
@@ -14,11 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cao5w3lingpoq" path="res://Scenes/durmil.tscn" id="11_1ywhn"]
 [ext_resource type="PackedScene" uid="uid://dtbq3hmpmarqm" path="res://Scenes/rock_wall.tscn" id="11_doijw"]
 [ext_resource type="Script" uid="uid://qqyx4djmr71h" path="res://Scripts/DayNightCycle.gd" id="12_yfkh0"]
-[ext_resource type="Script" uid="uid://jnvqmg0lc6jy" path="res://Inventory/inventory_interface.gd" id="13_xgj3m"]
-[ext_resource type="PackedScene" uid="uid://c4ml26pu4da5i" path="res://Inventory/inventory.tscn" id="14_7ft77"]
-[ext_resource type="PackedScene" uid="uid://717c1up5gk0n" path="res://Inventory/slot.tscn" id="15_cfuau"]
+[ext_resource type="PackedScene" uid="uid://bnwq2k0blktug" path="res://Inventory/UI.tscn" id="15_1ywhn"]
 [ext_resource type="PackedScene" uid="uid://byi6u2olp8m0c" path="res://Item/items/Herbs/magic_flower.tscn" id="18_1al20"]
-[ext_resource type="Script" uid="uid://15noy0beua2y" path="res://Scripts/item_popup.gd" id="18_wfsrg"]
 [ext_resource type="Resource" uid="uid://jn4f30rs4ov3" path="res://Item/items/Herbs/magic_flower_item_data.tres" id="20_wfsrg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hp1fr"]
@@ -1053,58 +1050,7 @@ script = ExtResource("12_yfkh0")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aendi")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="InventoryInterface" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("13_xgj3m")
-
-[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("14_7ft77")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -47.775
-offset_top = -49.435
-offset_right = -7.77502
-offset_bottom = -9.435
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("15_cfuau")]
-visible = false
-modulate = Color(1, 1, 1, 0.45098)
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-offset_left = 1080.22
-offset_top = 574.565
-offset_right = 1144.22
-offset_bottom = 638.565
-
-[node name="ItemPopupLabel" type="Label" parent="UI"]
-visible = false
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = -37.0
-offset_right = 53.0
-offset_bottom = -11.0
-grow_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 18
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("18_wfsrg")
+[node name="UI" parent="." instance=ExtResource("15_1ywhn")]
 
 [node name="MagicFlower" parent="." instance=ExtResource("18_1al20")]
 position = Vector2(170, 7)
@@ -1116,6 +1062,3 @@ position = Vector2(-91, 6)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -15.0
 autoplay = true
-
-[connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
-[connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
