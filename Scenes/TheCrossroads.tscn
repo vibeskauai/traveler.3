@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://bx3qeujpfyqcf"]
+[gd_scene load_steps=29 format=3 uid="uid://bx3qeujpfyqcf"]
 
 [ext_resource type="Script" uid="uid://d31kls7lk32l" path="res://Scripts/main.gd" id="1_sa6rd"]
 [ext_resource type="PackedScene" uid="uid://bob8810yi3kkl" path="res://Scenes/player.tscn" id="2_mtni4"]
 [ext_resource type="Texture2D" uid="uid://dq0mekbm0a26k" path="res://Art/grass.png" id="3_1ywhn"]
-[ext_resource type="Resource" uid="uid://b17yriwcaedxn" path="res://Inventory/equipped_inventory.tres" id="3_rsba5"]
+[ext_resource type="Script" uid="uid://dx43y75nfo15m" path="res://Inventory/inventory_data_equip.gd" id="3_rsba5"]
+[ext_resource type="Script" uid="uid://b0dn1xti7hk5r" path="res://Inventory/slot_data.gd" id="4_1al20"]
 [ext_resource type="Script" uid="uid://hnabyxqfk5md" path="res://Scripts/LevelTimeMap.gd" id="4_rsba5"]
 [ext_resource type="Texture2D" uid="uid://cwusml23na6xk" path="res://Art/sand tile.png" id="5_1al20"]
 [ext_resource type="Texture2D" uid="uid://b45xxhme657g" path="res://Art/Cave_Tiles.png" id="6_wfsrg"]
@@ -17,6 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bnwq2k0blktug" path="res://Inventory/UI.tscn" id="15_1ywhn"]
 [ext_resource type="PackedScene" uid="uid://byi6u2olp8m0c" path="res://Item/items/Herbs/magic_flower.tscn" id="18_1al20"]
 [ext_resource type="Resource" uid="uid://jn4f30rs4ov3" path="res://Item/items/Herbs/magic_flower_item_data.tres" id="20_wfsrg"]
+
+[sub_resource type="Resource" id="Resource_1al20"]
+script = ExtResource("3_rsba5")
+slot_datas = Array[ExtResource("4_1al20")]([null, null, null, null, null])
+metadata/_custom_type_script = "uid://dx43y75nfo15m"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hp1fr"]
 texture = ExtResource("3_1ywhn")
@@ -308,7 +314,7 @@ script = ExtResource("1_sa6rd")
 
 [node name="Player" parent="." instance=ExtResource("2_mtni4")]
 position = Vector2(41, 40)
-equipped_inventory = ExtResource("3_rsba5")
+equip_inventory_data = SubResource("Resource_1al20")
 
 [node name="Durmil" parent="." groups=["NPCs"] instance=ExtResource("11_1ywhn")]
 position = Vector2(-15, 83)

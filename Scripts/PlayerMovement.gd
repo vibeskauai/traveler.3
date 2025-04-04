@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 @onready var animation_tree: AnimationTree
 @export var speed: float = 80.0
 @export var inventory_data: InventoryData
-@export var equipped_inventory: InventoryData
+@export var equip_inventory_data: InventoryDataEquip
 
 static var current_player: Player
 

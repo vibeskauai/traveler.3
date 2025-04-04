@@ -8,6 +8,7 @@ static var current_world: World
 
 func _ready() -> void:
 	inventory_interface.set_player_inventory_data(player.inventory_data)
+	inventory_interface.set_equip_inventory_data(player.equip_inventory_data)
 	current_world = self
 
 func _on_inventory_interface_drop_slot_data(_slot_data: SlotData) -> void:

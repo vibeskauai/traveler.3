@@ -6,6 +6,9 @@ var grabbed_slot_data: SlotData
 
 @onready var player_inventory: PanelContainer = $InventoryPanel
 @onready var grabbed_slot: PanelContainer = $GrabbedSlot
+@onready var armor_panel: PanelContainer = $ArmorPanel
+@onready var equip_inventory: PanelContainer = $EquipInventory
+
 
 func _ready():
 	$ArmorButton.connect("pressed", Callable(self, "_on_ArmorButton_pressed"))
@@ -34,6 +37,15 @@ func _physics_process(_delta: float) -> void:
 func set_player_inventory_data(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_interact.connect(on_inventory_interact)
 	player_inventory.set_inventory_data(inventory_data)
+	
+func set_equip_inventory_data(inventory_data: InventoryData) -> void:
+	inventory_data.inventory_interact.connect(on_inventory_interact)
+	equip_inventory.set_inventory_data(inventory_data)
+
+#func set_equip_inventory_data(inventory_data: InventoryData) -> void:
+#	inventory_data.inventory_interact.connect(on_inventory_interact)
+#	armor_panel.set_inventory_data(inventory_data)
+	
 
 func on_inventory_interact(inventory_data: InventoryData,
  index: int, button: int) -> void:
