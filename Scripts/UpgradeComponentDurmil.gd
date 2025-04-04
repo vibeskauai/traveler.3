@@ -5,7 +5,6 @@ var equip_slot: SlotData
 
 func _ready():
 	inventory_data = load("res://Inventory/player_inventory.tres")
-	equip_slot = load("res://Inventory/equip_slot.tres")
 	get_node("../InteractionArea").connect("interacted", Callable(self, "_on_interaction_area_clicked"))
 
 func _on_interaction_area_clicked():

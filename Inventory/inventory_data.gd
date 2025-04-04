@@ -13,7 +13,6 @@ var equipped_chest: SlotData = null
 var equipped_shield: SlotData = null
 var equipped_legs: SlotData = null
 
-
 func grab_slot_data(index: int) -> SlotData:
 	var slot_data = slot_datas[index]
 	

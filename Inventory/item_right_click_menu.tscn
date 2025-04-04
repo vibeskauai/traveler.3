@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://7mtbm2ux4ubq"]
+
+[ext_resource type="Script" uid="uid://bp7mxdxxawi1e" path="res://Inventory/item_right_click_menu.gd" id="1_3f3fy"]
+
+[node name="ItemRightClickMenu" type="Node2D" node_paths=PackedStringArray("equip", "cancel") groups=["itemrightclickmenu"]]
+script = ExtResource("1_3f3fy")
+equip = NodePath("VBoxContainer/Equip")
+cancel = NodePath("VBoxContainer/Cancel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Equip" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Equip"
+
+[node name="Cancel" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Cancel"

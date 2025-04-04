@@ -8,7 +8,6 @@ const Slot = preload("res://Inventory/slot.tscn")
 @onready var shield_slot: Button = $VBoxContainer/ChestRow/ShieldSlot
 @onready var legs_slot: Button = $VBoxContainer/LegsSlot
 
-
 func set_equipped_items(inventory_data: InventoryData) -> void:
 	inventory_data.inventory_updated.connect(populate_item_grid)
 	populate_item_grid(inventory_data)

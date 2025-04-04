@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnwq2k0blktug"]
+[gd_scene load_steps=25 format=3 uid="uid://bnwq2k0blktug"]
 
 [ext_resource type="Script" uid="uid://jnvqmg0lc6jy" path="res://Inventory/inventory_interface.gd" id="1_ckldv"]
 [ext_resource type="PackedScene" uid="uid://c4ml26pu4da5i" path="res://Inventory/inventory.tscn" id="2_xhasy"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cfqb8ws5bdeb3" path="res://Inventory/OldUI/armour weapon icon.png" id="13_5hskc"]
 [ext_resource type="Script" uid="uid://kdt137dw3mc8" path="res://Inventory/armor_button.gd" id="14_hgmi7"]
 [ext_resource type="Script" uid="uid://15noy0beua2y" path="res://Scripts/item_popup.gd" id="15_ug5bk"]
+[ext_resource type="Script" uid="uid://cos5bck3u5gvn" path="res://Inventory/player_equipment.gd" id="16_xhasy"]
+[ext_resource type="Script" uid="uid://c3lpimld4ahf6" path="res://Inventory/inventory_system.gd" id="17_416hp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytnni"]
 texture = ExtResource("3_416hp")
@@ -318,7 +320,9 @@ vertical_alignment = 1
 script = ExtResource("15_ug5bk")
 
 [node name="PlayerEquipment" type="Node" parent="."]
+script = ExtResource("16_xhasy")
 
 [node name="InventorySystem" type="Node" parent="."]
+script = ExtResource("17_416hp")
 
 [connection signal="gui_input" from="InventoryInterface" to="InventoryInterface" method="_on_gui_input"]

@@ -12,21 +12,21 @@ func _ready():
 	$InventoryButton.connect("pressed", Callable(self, "_on_InventoryButton_pressed"))
 	$StatsButton.connect("pressed", Callable(self, "_on_StatsButton_pressed"))
 
+func _on_InventoryButton_pressed():
+	$InventoryPanel.show()
+	$StatsPanel.hide()
+	$ArmorPanel.hide()
+	
+func _on_StatsButton_pressed():
+	$InventoryPanel.hide()
+	$StatsPanel.show()
+	$ArmorPanel.hide()
+
 func _on_ArmorButton_pressed():
 	$InventoryPanel.hide()
 	$StatsPanel.hide()
 	$ArmorPanel.show()
-
-func _on_InventoryButton_pressed():
-	$ArmorPanel.hide()
-	$StatsPanel.hide()
-	$InventoryPanel.show()
-
-func _on_StatsButton_pressed():
-	$ArmorPanel.hide()
-	$InventoryPanel.hide()
-	$StatsPanel.show()
-
+	
 func _physics_process(_delta: float) -> void:
 	if grabbed_slot.visible:
 		grabbed_slot.global_position = get_global_mouse_position() + Vector2(5, 5)
@@ -44,11 +44,11 @@ func on_inventory_interact(inventory_data: InventoryData,
 		[_, MOUSE_BUTTON_LEFT]:
 			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index)
 		[null, MOUSE_BUTTON_RIGHT]:
-			pass
-			grabbed_slot_data = inventory_data.grab_slot_data(index)
+			var slot_data = inventory_data.slot_datas[index]
 		[_, MOUSE_BUTTON_RIGHT]:
 			grabbed_slot_data = inventory_data.drop_single_slot_data(grabbed_slot_data, index)
 	update_grabbed_slot()
+
 
 func update_grabbed_slot() -> void:
 	if grabbed_slot_data:

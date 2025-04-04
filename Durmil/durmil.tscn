@@ -10,7 +10,7 @@ size = Vector2(28, 31)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hnk2o"]
 size = Vector2(14, 11)
 
-[node name="Durmil" type="CharacterBody2D"]
+[node name="Durmil" type="CharacterBody2D" groups=["NPCs"]]
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
